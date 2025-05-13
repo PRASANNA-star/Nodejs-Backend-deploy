@@ -14,5 +14,4 @@ pool.query(createUsersTable, (err, result) => {
     } else {
         console.log('✅ Users table ensured (created if not exists).');
     }
-    //pool.end(); // close connection--->while Deploying or Running in production, comment this line to close the connection it need not be closed`
 });

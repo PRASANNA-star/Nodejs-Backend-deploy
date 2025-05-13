@@ -3,11 +3,11 @@ const router = express.Router();
 const userController = require('../controllers/userController');
 const { authenticateToken } = require('../middleware/authMiddleware');
 
-// Public routes
+// Public
 router.post('/register', userController.createUser);
 router.post('/login', userController.login);
 
-// Protected routes (require valid JWT)
+// Protected
 router.get('/', authenticateToken, userController.getAllUsers);
 router.get('/:id', authenticateToken, userController.getUserById);
 router.put('/:id', authenticateToken, userController.updateUser);
